@@ -145,6 +145,20 @@ public class DoubleLinkedList<T>{
         System.out.println(currentNode.data + " -> null ");
     }
 
+    //Method to get the count of number of nodes in a double linked list.
+    public int length(){
+        int count = 0;
+        if (isEmpty()){
+            return count;
+        }
+        Node currentNode = headNode;
+        while(currentNode != null){
+            count++; 
+            currentNode.nextNode = currentNode;
+        }
+        return count;
+    }
+
     public static void main(String[] args){
         DoubleLinkedList<Integer> dll = new DoubleLinkedList<Integer>();
         dll.printAll();
