@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CheckMergeArray<LinkedList_96f09981>",
+            "request": "launch",
+            "mainClass": "CheckMergeArray",
+            "projectName": "LinkedList_96f09981"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DoubleLinkedList<LinkedList_96f09981>",
+            "request": "launch",
+            "mainClass": "DoubleLinkedList",
+            "projectName": "LinkedList_96f09981"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ListDemo<LinkedList_96f09981>",
+            "request": "launch",
+            "mainClass": "ListDemo",
+            "projectName": "LinkedList_96f09981"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DoubleLinkedList",
+            "request": "launch",
+            "mainClass": "DoubleLinkedList"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ListDemo",
+            "request": "launch",
+            "mainClass": "ListDemo"
+        }
+    ]
+}
