@@ -143,4 +143,81 @@ public class BinarySearchTree {
         }
         return false;
     }
+
+    public boolean deleteNode(int value){
+        Node parentNode = null;
+        Node currNode  = this.root;
+
+        if(isEmpty()){
+            System.out.println("Tree is empty. Node cannot be deleted");
+            return false;
+        }
+
+        while((currNode != null) && (currNode.getData() != value)){
+            if(currNode.getData() > value){
+                currNode = currNode.getLeftNode();
+            }else{
+                currNode = currNode.getRightNode();
+            }
+        }
+
+        if(currNode == null){
+            return false;
+        }
+
+        if((currNode.getLeftNode() == null) && (currNode.getRightNode() == null)){
+            if(currNode == this.root){
+                setRoot(null);
+                return true;
+            }
+            else if(currNode.getData() <= parentNode.getData()){
+                parentNode.setLeftNode(null);
+            }
+            else{
+                parentNode.setRightNode(null);
+            }
+            return true;
+        }
+
+        if((currNode.getLeftNode() == null) || (currNode.getRightNode() == null)){
+            if(currNode.getLeftNode() != null){
+                if(currNode == this.root){
+                    this.setRoot(currNode.getLeftNode());
+                    return true;
+                }
+                if(currNode.getData() <= parentNode.getData()){
+                    parentNode.setLeftNode(currNode.getLeftNode());
+                }else{
+                    parentNode.setRightNode(currNode.getLeftNode());
+                }
+            }else{
+                if(currNode == this.root){
+                    this.setRoot(currNode.getRightNode());
+                    return true;
+                }
+                if(currNode.getData() <= parentNode.getData()){
+                    parentNode.setLeftNode(currNode.getRightNode());
+                }else{
+                    parentNode.setRightNode(currNode.getRightNode());
+                }
+            }
+            return true;
+        }
+
+        Node temp = currNode.getRightNode();
+        Node tempParent = currNode;
+        while((temp.getLeftNode() != null) && (temp.getRightNode() != null)){
+            tempParent = temp;
+            temp = temp.getLeftNode();
+
+        }
+        if(currNode == this.root){
+            currNode.setData(currNode.getRightNode().getData());
+            return true;
+        }else{
+            currNode.setData(temp.getData());
+            tempParent.setLeftNode(null);
+            return true;
+        }
+    }
 }

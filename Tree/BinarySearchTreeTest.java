@@ -32,5 +32,7 @@ public class BinarySearchTreeTest {
         bst.printTree();
         System.out.println(bst.hasValue(9));
         System.out.println(bst.hasValue(19));
+        bst.deleteNode(9);
+        bst.printTree();
     }
 }
