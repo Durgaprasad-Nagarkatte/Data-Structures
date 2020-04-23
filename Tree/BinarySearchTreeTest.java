@@ -30,6 +30,7 @@ public class BinarySearchTreeTest {
         bst.addRecursive(14, bst.getRoot());
 
         bst.printTree();
-
+        System.out.println(bst.hasValue(9));
+        System.out.println(bst.hasValue(19));
     }
 }

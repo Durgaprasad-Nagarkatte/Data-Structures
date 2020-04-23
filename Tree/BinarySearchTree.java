@@ -46,6 +46,7 @@ public class BinarySearchTree {
                 q.add(rightNode);
             }
         }
+        System.out.println();
     }
 
     public void add(int value){
@@ -88,5 +89,58 @@ public class BinarySearchTree {
             currNode.setRightNode(addRecursive(value, currNode.getRightNode()));
         }
         return currNode;
+    }
+
+    public Node searchTree(int value){
+        if(isEmpty()){
+            System.out.println("Value not found. Tree is Empty ");
+            return null;
+        }
+        Node currNode = this.root;
+
+        while(currNode != null){
+            if(currNode.getData() == value){
+                return currNode;
+            }
+            else if(currNode.getData() > value){
+                currNode = currNode.getLeftNode();
+            }
+            else{
+                currNode = currNode.getRightNode();
+            }
+        }
+        return currNode;
+    }
+
+    public Node searchTreeRecursive(int value, Node node){
+        if(isEmpty()){
+            return null;
+        }
+        if(node == null){
+            return null;
+        }
+        Node left = null, right = null;
+
+        if(node.getData() == value){
+            return node;
+        }else if(node.getData() > value){
+            left = searchTreeRecursive(value, node.getLeftNode());
+        }else{
+            right = searchTreeRecursive(value, node.getRightNode());
+        }
+        if(left != null){
+            return left;
+        }else{
+            return right;
+        }
+    }
+
+    public boolean hasValue(int value){
+        Node node = searchTree(value);
+        node = searchTreeRecursive(value, this.root);
+        if(node != null){
+            return true;
+        }
+        return false;
     }
 }
