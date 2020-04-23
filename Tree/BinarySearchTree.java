@@ -144,6 +144,34 @@ public class BinarySearchTree {
         return false;
     }
 
+    public void preOrderTraversal(Node node){
+        if(node == null){
+            return;
+        }
+        System.out.print(node.getData() + " ");
+        preOrderTraversal(node.getLeftNode());
+        preOrderTraversal(node.getRightNode());
+    }
+
+    public void inOrderTraversal(Node node){
+        if(node == null){
+            return;
+        }
+        inOrderTraversal(node.getLeftNode());
+        System.out.print(node.getData() + " ");
+        inOrderTraversal(node.getRightNode());
+    }
+
+    public void postOrderTraversal(Node node){
+        if(node == null){
+            return;
+        }
+        postOrderTraversal(node.getLeftNode());
+        postOrderTraversal(node.getRightNode());
+        System.out.print(node.getData() + " ");
+
+    }
+
     public boolean deleteNode(int value){
         Node parentNode = null;
         Node currNode  = this.root;

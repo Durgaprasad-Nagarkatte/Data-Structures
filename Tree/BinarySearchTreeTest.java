@@ -34,5 +34,11 @@ public class BinarySearchTreeTest {
         System.out.println(bst.hasValue(19));
         bst.deleteNode(9);
         bst.printTree();
+
+        bst.preOrderTraversal(bst.getRoot());
+        System.out.println();
+        bst.inOrderTraversal(bst.getRoot());
+        System.out.println();
+        bst.postOrderTraversal(bst.getRoot());
     }
 }
