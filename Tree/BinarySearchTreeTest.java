@@ -30,15 +30,18 @@ public class BinarySearchTreeTest {
         bst.addRecursive(14, bst.getRoot());
 
         bst.printTree();
-        System.out.println(bst.hasValue(9));
-        System.out.println(bst.hasValue(19));
+        //System.out.println(bst.hasValue(9));
+        //System.out.println(bst.hasValue(19));
         bst.deleteNode(9);
         bst.printTree();
 
-        bst.preOrderTraversal(bst.getRoot());
-        System.out.println();
-        bst.inOrderTraversal(bst.getRoot());
-        System.out.println();
-        bst.postOrderTraversal(bst.getRoot());
+        //.preOrderTraversal(bst.getRoot());
+        //System.out.println();
+        //bst.inOrderTraversal(bst.getRoot());
+        //System.out.println();
+        //bst.postOrderTraversal(bst.getRoot());
+        //System.out.println();
+        //System.out.println(bst.minimumValue(bst.getRoot()));
+        System.out.println(bst.findAncestors(12));
     }
 }

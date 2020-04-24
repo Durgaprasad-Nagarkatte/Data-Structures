@@ -5,6 +5,7 @@ import java.util.Queue;
 
 public class BinarySearchTree {
     private Node root;
+    private String string = "";
 
     public BinarySearchTree() {
         this.root = null;
@@ -247,5 +248,34 @@ public class BinarySearchTree {
             tempParent.setLeftNode(null);
             return true;
         }
+    }
+
+    public int minimumValue(Node node){
+        if(node.getLeftNode() == null){
+            return node.getData();
+        }
+
+        int min = minimumValue(node.getLeftNode());
+        return min;
+    }
+
+    public String findAncestors(int value){
+        Node currentNode = this.getRoot();
+        if(isEmpty()){
+            System.out.println("Tree is Empty");
+            return null;
+        }
+        while(currentNode != null){
+            string = currentNode.getData() + " " +  string ;
+            if(currentNode.getData() == value){
+                return string;
+            }
+            if(currentNode.getData() < value){
+                currentNode = currentNode.getRightNode();
+            }else{
+                currentNode = currentNode.getLeftNode();
+            }
+        }
+        return null;
     }
 }
